@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from "react-router-dom";
-
+import LogButtons from './components/LogButtons';
 const Navbar = () => {
     return (
         <div className='Navbar'>
@@ -8,12 +8,8 @@ const Navbar = () => {
                 <h1>SubAlert</h1>
             </div>
             <div className='Navbar-right'>
-                <button>
-                    <Link to="/signin">Sign In</Link>
-                </button>
-                <button>
-                    <Link to="/signup">Sign Up</Link>
-                </button>
+                <LogButtons text={'Sign In'} to={'/signin'} />
+                <LogButtons text={'Sign Up'} to={'/signup'} />
             </div>  
         </div>
     )

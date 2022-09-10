@@ -8,6 +8,10 @@ import  Layout from './pages/Layout'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
+import { Auth0Provider } from '@auth0/auth0-react'
+
+const domain = process.env.REACT_APP_AUTH0_DOMAIN
+const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID
 
 export default function App() {
   return (
@@ -26,7 +30,9 @@ export default function App() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Auth0Provider domain={domain} clientId={clientId} redirectUri={window.location.origin} >
+      <App />
+    </Auth0Provider>
   </React.StrictMode>
 );
 
